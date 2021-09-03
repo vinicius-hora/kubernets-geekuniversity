@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webapp
+spec:
+  template:
+    metadata:
+      labels:
+        app: webapp
+    spec:
+      containers:
+        - name: webapp
+          image: nginx
+  selector:
+    matchLabels:
+      app: webapp
+  replicas: 2
+
+
+#acessar o pod 
+#kubectl exec -it webapp-5f68bb577b-f49tm -- bash
+#acessar o banco
+#instalar
+#mysql -h 172.17.0.2 -uroot -ppassword geek
+
+#criar as tabelas
+#create table pessoas (id in primary key auto_increment, nome varchar(255), email varchar(255));
+
